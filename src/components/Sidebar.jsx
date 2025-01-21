@@ -1,9 +1,19 @@
 import react from "react"
 
+import Header from "./Header";
+import Content from "./Content";
+import Footer from "./Footer";
+import Card from "./Card";
 export default function Sidebar(){
     return (
         <section className="sideBar" style={Style()}>
-            <h2>SideBar</h2>
+            <Header/>
+            
+            <Content>
+                <Card/>
+            </Content>
+            
+            <Footer/>
         </section>
     );
 }

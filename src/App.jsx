@@ -6,7 +6,6 @@ import {Editor, Sidebar} from "./components/importer.jsx";
 function App() {
   return (
     <>
-     <Sidebar />
      <Editor />
     </>
   );
