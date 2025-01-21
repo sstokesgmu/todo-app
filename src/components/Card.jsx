@@ -3,6 +3,7 @@ import "./styles/Card.css"
 
 export default function Card ({setup, data}) {
     const [completed,setCheckBox] = useState(false);
+    const {titleValue, bodyValue, id} = data;
 
     const handler = () => {
        setCheckBox(!completed);
@@ -11,10 +12,10 @@ export default function Card ({setup, data}) {
 
     
     return (
-        <section className="card-sidebar-light" onClick={()=>setup.callback({})}>
+        <section className="card-sidebar-light" onClick={()=>setup.callback({titleValue,bodyValue, id})}>
             <div>
-                <h2>Title</h2>
-                <p>This is the todo for monday 1/20/2025</p>
+                <h2>{titleValue}</h2>
+                <p>{bodyValue}</p>
                 <label>
                     Completed
                     <input type="checkbox" checked={completed} onChange={()=>handler()}/>
