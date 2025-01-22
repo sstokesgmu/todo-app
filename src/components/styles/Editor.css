@@ -1,19 +1,19 @@
 
-/* Ensure the body and html stretch to fit content */
+
 html, body {
-    height: 100%; /* Ensure they grow with the content */
-    margin: 0; /* Remove default margin */
+    height: 100%; 
+    margin: 0;
     background-color: #EDEDED; /* Set the gray background */
 }
 /* Main editor container */
 .editor {
-    display: flex; /* Flex layout */
-    flex-direction: column; /* Stack sections vertically */
+    display: flex; 
+    flex-direction: column; 
     padding: 1em; /* Add spacing around the container */
     background-color: #f1eeee; /* Red-brown background for the editor */
     color: #000000; /* Black text color */
-    gap: 1em; /* Add spacing between sections */
-    height: 100vh; /* Full height layout */
+    gap: 1em; 
+    height: 100vh; 
     box-sizing: border-box; /* Include padding in height calculations */
     flex-grow: 1; /* Allow the editor to grow */
 }

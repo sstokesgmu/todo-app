@@ -1,5 +1,4 @@
 import react, {useState} from "react"
-import "./styles/Card.css"
 
 export default function Card ({setup, data}) {
     const [completed,setCheckBox] = useState(false);

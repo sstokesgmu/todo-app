@@ -1,7 +1,7 @@
 import './App.css'
 
 //Components
-import {Editor, Sidebar} from "./components/importer.jsx";
+import {Editor} from "./components/importer.jsx";
 
 function App() {
   return (
