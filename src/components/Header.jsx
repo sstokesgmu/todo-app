@@ -3,7 +3,7 @@ import react from "react"
 export default function Header(){
     return (
         <section>
-            <h1>Header</h1>           
+            <h1>ToDo App</h1>           
         </section>
     );
 }

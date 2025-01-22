@@ -1,0 +1,114 @@
+
+/* Ensure the body and html stretch to fit content */
+html, body {
+    height: 100%; /* Ensure they grow with the content */
+    margin: 0; /* Remove default margin */
+    background-color: #EDEDED; /* Set the gray background */
+}
+/* Main editor container */
+.editor {
+    display: flex; /* Flex layout */
+    flex-direction: column; /* Stack sections vertically */
+    padding: 1em; /* Add spacing around the container */
+    background-color: #f1eeee; /* Red-brown background for the editor */
+    color: #000000; /* Black text color */
+    gap: 1em; /* Add spacing between sections */
+    height: 100vh; /* Full height layout */
+    box-sizing: border-box; /* Include padding in height calculations */
+    flex-grow: 1; /* Allow the editor to grow */
+}
+
+
+/* Form section */
+.editor section {
+    background-color: #ffffff; /* White background for the form */
+    border-radius: 10px;
+    padding: 1.5em;
+    margin: 0 auto; /* Center align */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+    width: 90%; /* Responsive width */
+    max-width: 600px; /* Limit the form width */
+}
+
+.editor div {
+    background-color: #f1eeee;
+}
+
+/* Input fields */
+.editor input,
+.editor textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 1em;
+    padding: 0.75em;
+    border: 1px solid #2EBB57; /* Green border for inputs */
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+    background-color: #ffffff; /* Dark background for inputs */
+    color: #000000; /* White text */
+}
+
+/* Button */
+.editor button {
+    background-color: #2EBB57; /* Green button */
+    color: #FFFFFF; /* White text */
+    border: none;
+    padding: 0.75em 1.5em;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.editor button:hover {
+    background-color: #F34723; /* Red background on hover */
+    color: #FFFFFF; /* White text */
+    transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+.content-row {
+    display: flex;
+    flex-wrap: wrap; /* Allow cards to wrap */
+    justify-content: center; /* Center the wrapped cards */
+    align-items: flex-start; /* Align cards at the top */
+    gap: 1em; /* Add consistent spacing between cards */
+    padding: 1.5em;
+    background-color: #F34723;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+/* Cards */
+.content-row > * {
+    flex: 1 1 calc(30% - 1em); /* Each card takes about 30% of the row */
+    max-width: calc(30% - 1em);
+    min-width: 250px; /* Prevent cards from shrinking too much */
+    background-color: #FFFFFF;
+    color: #333333;
+    border-radius: 10px;
+    padding: 1.5em;
+    box-sizing: border-box;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-size: 1em;
+}
+
+
+/* Card delete button */
+.content-row > * button {
+    margin-top: 1em;
+    background-color: #2EBB57; /* Green delete button */
+    color: #FFFFFF;
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.content-row > * button:hover {
+    background-color: #F34723; /* Red background on hover */
+    color: #FFFFFF;
+}

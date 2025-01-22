@@ -1,9 +1,0 @@
- .card-sidebar-light{
-    width: 200px;
-    height: 200px;
-    display: flex;
-    flex-direction: row;
-    padding: 1em;
-    border-radius:  1em;
-    background-color: rgb(14, 1, 255);
- }

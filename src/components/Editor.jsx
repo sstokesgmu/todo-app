@@ -4,6 +4,8 @@ import Content from "./Content";
 import Footer from "./Footer";
 import Card from "./Card";
 
+import "./styles/Editor.css"
+
 export default function Editor() {
     const [cards, setCards] = useState([]);
     const [titleValue, setTitleValue] = useState("");
@@ -35,21 +37,24 @@ export default function Editor() {
             );
             setEditingId(null);
         }
-          
     };
     
-    const handleCallback = (obj) => {
+    const selectCard = (obj) => {
         console.log(obj)
         setEditingId(obj.id)
         setTitleValue(obj.titleValue);
         setBodyValue(obj.bodyValue);
     };
 
+    const deleteCard = (id) => {
+        setCards((prevCards) => 
+            prevCards.filter((card) => card.id !== id))
+    }
+
     return (
-        <section className="editor" style={Style()}>
+        <section className="editor">
                <Header/>
                 <Content type={false}>
-                    <h1>Create a new Todo</h1>
                     <section>
                         <input 
                             placeholder = "Enter Title" 
@@ -72,22 +77,14 @@ export default function Editor() {
                      {cards.map((card) => (
                         <Card
                             key={card.id}
-                            setup={{ clickable: true, callback: handleCallback }}
+                            setup={{ clickable: true, selectCallback: selectCard,
+                                deleteCallback: deleteCard }}
                             data={{ titleValue: card.titleValue, bodyValue: card.bodyValue,id:card.id}}
                         />
-                    ))}
+                    )).reverse()}
                 </Content>              
-                <Footer/>
+                {/* <Footer/> */}
         </section>
     );
 }
 
-function Style(){
-    return {
-        display: "flex",
-        flexDirection: "column",
-        padding: "1em 1em",
-        flexGrow: "1",
-        backgroundColor: "red"
-    }
-}

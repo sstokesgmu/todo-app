@@ -4,25 +4,33 @@ import "./styles/Card.css"
 export default function Card ({setup, data}) {
     const [completed,setCheckBox] = useState(false);
     const {titleValue, bodyValue, id} = data;
-
-    const handler = () => {
-       setCheckBox(!completed);
-       console.log("Hello");
-    }
-
-    
+   
     return (
-        <section className="card-sidebar-light" onClick={()=>setup.callback({titleValue,bodyValue, id})}>
-            <div>
-                <h2>{titleValue}</h2>
+        <div className="card-sidebar-light" onClick={(e)=> {
+            console.log(e.ta)
+            if (e.target === e.currentTarget)
+                setup.selectCallback({titleValue, bodyValue, id});
+        }}>
+             <h2>{titleValue}</h2>
                 <p>{bodyValue}</p>
                 <label>
                     Completed
-                    <input type="checkbox" checked={completed} onChange={()=>handler()}/>
+                    <input type="checkbox" checked={completed} onChange={(e) => {
+                        e.stopPropagation()
+                        setCheckBox(!completed);
+                    }}/>
                 </label>
-                <button  onClick={()=>DeleteToDo(completed)}>Delete</button>
-            </div>
-        </section>
+                <button onClick={(e) => {
+                    if(completed)
+                    {
+                        e.stopPropagation()
+                        setup.deleteCallback(id);
+                    }
+                    else {
+                        alert("You can only delete if the task is completed")
+                    }
+                }}>Delete</button>
+        </div>
     );
 }
 
@@ -33,4 +41,3 @@ function DeleteToDo(completed){
         console.log("Cannot Delete")
 }
 
-function CreateContent(){}

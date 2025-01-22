@@ -1,24 +1,10 @@
-import react from "react"
+import React from "react";
+import "./styles/Content.css"; // Import the CSS file
 
-export default function Content({children, type}) {
-    return(
-        <section style = {type ? createStyle(): createStyle2()}>
+export default function Content({ children, type }) {
+    return (
+        <section className={type ? "content-row" : "content-column"}>
             {children}
         </section>
     );
-}
-
-function createStyle (){
-    return {
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "space-evenly"
-    }
-}
-
-
-function createStyle2 (){
-    return {
-        backgroundColor: "pink"
-    }
 }
